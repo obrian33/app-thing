@@ -2,10 +2,13 @@ import React from 'react';
 import './App.scss';
 
 export function NavBar() {
+  const thing = ['One', 'two', 'three', 'four'];
   return (
-    <div className="row p-2">
+    <div className="row pt-3 px-4">
       <div className="col">
-        THING
+        <nav className="nav nav-pills">
+          {thing.map((x, index) => <li key={index} className="nav-item nav-link active m-1" href="#">{x}</li>)}
+        </nav>
       </div>
     </div>
   );
@@ -18,6 +21,7 @@ export function FormComponent() {
       <input type="name" className="form-control" placeholder="Name"></input>
     </div>
   ];
+
   return (
     <form>
       <div className="form-row">
@@ -47,8 +51,8 @@ function App() {
     <div className="container-fluid" style={{ height: "100vh" }}>
       <NavBar></NavBar>
       <div className="row">
-        <div className="col">
-          <div className="card">
+        <div className="col pt-2">
+          <div className="card mx-5">
             <div className="card-header bg-info">
               Thing 2
             </div>
